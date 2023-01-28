@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mamba_ECommerce", "Mamba_ECommerce.csproj", "{0D08F7CB-1D76-4DEA-B712-7CDB452AAEAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D08F7CB-1D76-4DEA-B712-7CDB452AAEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D08F7CB-1D76-4DEA-B712-7CDB452AAEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D08F7CB-1D76-4DEA-B712-7CDB452AAEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D08F7CB-1D76-4DEA-B712-7CDB452AAEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {381E6E34-05F5-416B-B8B7-5475B2AA8FE2}
+	EndGlobalSection
+EndGlobal

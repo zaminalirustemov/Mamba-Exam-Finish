@@ -1,0 +1,41 @@
+﻿@model List<Team>
+@{
+    int count = 0;
+}
+
+<div class="card-body">
+    <h4 class="card-title">Recycle Bin/Deleted~Team/Table</h4>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Fullname</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Team teamMember in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>@count</td>
+                        <td>@teamMember.Id</td>
+                        <td>
+                            <div class="pic"><img style="width: 100px;height: 100px;" src="~/uploads/team/@teamMember.ImageName" class="img-fluid" alt=""></div>
+                        </td>
+                        <td>@teamMember.Fullname</td>
+                        <td><label class="badge badge-info">@teamMember.Position.Name</label></td>
+                        <td>
+                            <a asp-action="Restore" asp-controller="deletedteam" asp-route-id="@teamMember.Id" class="btn btn-primary">Restore</a>
+                            <a asp-action="harddelete" asp-controller="deletedteam" asp-route-id="@teamMember.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

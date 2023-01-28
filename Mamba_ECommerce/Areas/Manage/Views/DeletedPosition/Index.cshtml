@@ -1,0 +1,35 @@
+﻿@model List<Position>
+@{
+    int count = 0;
+}
+
+<div class="card-body">
+    <h4 class="card-title">Recycle Bin/Delete~Position/Table</h4>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Position position in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>@count</td>
+                        <td>@position.Id</td>
+                        <td><label class="badge badge-info">@position.Name</label></td>
+                        <td>
+                            <a asp-action="restore" asp-controller="deletedPosition" asp-route-id="@position.Id" class="btn btn-primary">Restore</a>
+                            <a asp-action="harddelete" asp-controller="deletedPosition" asp-route-id="@position.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

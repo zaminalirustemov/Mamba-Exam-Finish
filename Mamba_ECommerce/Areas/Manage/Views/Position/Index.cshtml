@@ -1,0 +1,36 @@
+﻿@model List<Position>
+@{
+    int count = 0;
+}
+
+<div class="card-body">
+    <h4 class="card-title">Models/Position/Table</h4>
+    <div class="table-responsive">
+        <table class="table">
+            <a asp-action="create" asp-controller="position" class="btn btn-outline-success">Create</a>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Position position in Model)
+                {
+                    count++;
+                    <tr>
+                        <td>@count</td>
+                        <td>@position.Id</td>
+                        <td><label class="badge badge-info">@position.Name</label></td>
+                        <td>
+                            <a asp-action="update" asp-controller="Position" asp-route-id="@position.Id" class="btn btn-outline-primary">Update</a>
+                            <a asp-action="softdelete" asp-controller="Position" asp-route-id="@position.Id" class="btn btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

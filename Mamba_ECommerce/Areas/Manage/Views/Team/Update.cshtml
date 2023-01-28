@@ -1,0 +1,67 @@
+﻿@model Team
+
+<div class="card-body">
+    <h4 class="card-title">Models/Team/Update</h4>
+    <form class="forms-sample" method="post" enctype="multipart/form-data">
+        <div class="pic" style=" border: outset;  width: 150px;">
+            <img style="width:150px" src="~/uploads/team/@Model.ImageName" class="img-fluid" alt="">
+            <input type="hidden" asp-for="ImageName" />
+            </div>
+        <div class="form-group row">
+            <label asp-for="ImageFile" class="col-sm-3 col-form-label">Image</label>
+            <div class="col-sm-9">
+                <input asp-for="ImageFile" class="form-control">
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="PositionId" class="col-sm-3">Position</label>
+            <div class="col-sm-9">
+                <select asp-for="PositionId" class="form-control">
+                    @foreach (Position position in ViewBag.Positions)
+                    {
+                        <option value="@position.Id">@position.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="Fullname" class="col-sm-3 col-form-label">Fullname</label>
+            <div class="col-sm-9">
+                <input asp-for="Fullname" class="form-control" placeholder="Fullname">
+                <span asp-validation-for="Fullname" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="TwUrl" class="col-sm-3 col-form-label">Twitter Url</label>
+            <div class="col-sm-9">
+                <input asp-for="TwUrl" class="form-control" placeholder="Twitter Url">
+                <span asp-validation-for="TwUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="FbUrl" class="col-sm-3 col-form-label">Facebook Url</label>
+            <div class="col-sm-9">
+                <input asp-for="FbUrl" class="form-control" placeholder="Facebook Url">
+                <span asp-validation-for="FbUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="InstUrl" class="col-sm-3 col-form-label">Instagram Url</label>
+            <div class="col-sm-9">
+                <input asp-for="InstUrl" class="form-control" placeholder="Instagram Url">
+                <span asp-validation-for="InstUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="LInUrl" class="col-sm-3 col-form-label">LinkedIn Url</label>
+            <div class="col-sm-9">
+                <input asp-for="LInUrl" class="form-control" placeholder="LinkedIn Url">
+                <span asp-validation-for="LInUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Update</button>
+        <a asp-action="index" asp-controller="team" class="btn btn-dark">Cancel</a>
+    </form>
+</div>
